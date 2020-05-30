@@ -1,0 +1,5 @@
+setcps(138/60/4)
+
+d1 $ n (stack [(scale "phrygian" "0 5 1 6 2 7 3 8 4 9")]) # s "midi" # midichan 0 # legato 0.5
+
+d2 $ n "0*4" # s "midi" # midichan 1 # legato 0.2

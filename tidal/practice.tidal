@@ -1,0 +1,63 @@
+-- nice ones!!!
+d1 $ slow 2 $ sometimes rev $ arp "<up down pinky pinky>" $ n "f4'min7 c4'min7 bs4'min7 c4'7sus4" # s "supercomparator" # room 0.5 # velocity 0.5 # sustain 0.5 # voice 2
+
+d2 $ slow 4 $ n "f3 c3 bs3" # s (stack ["supersquare", "superpwm"]) # sustain 3 # lfo 0.2 # pitch1 0.8
+
+d3 $ slow 8 $ n "f4'min7 c4'min7 bs4'min7 c4'7sus4" # s "supercomparator" # sustain 5 # lfo 0 # voice 4 # room 0.1 # orbit 2 # gain 0.8
+
+d1 $ silence
+
+d2 $ silence
+
+d3 $ silence
+
+setcps(132/60/4)
+
+p 1 $ n "d2 ds2 d2 d2 d4 d2 ds4 d2" # s (stack["superpwm","superzow"]) # resonance 0.4 # room 0.4 # orbit 2 # pitch1 0.9 # sustain 0.4
+
+hush
+
+d5 $ jux rev $ s "[noise2,noise2:1,noise2:2]*16" # speed 0.1 # legato 1.5
+
+setcps(90/60/4)
+
+d6 $ s "[808bd <~ supersnare> ~ supersnare 808bd ~ supersnare ~]*2"
+
+d6 $ "bd bd hh [bd,sd] hh bd [~ sd]"
+
+d4 $ stack [
+    n "0*4" # s "super808" # voice 0.5,
+    n "0*16" # s "superhat" # sustain (segment 16 $ (sine*0.1) + 0.7)
+] # room 0.2 # orbit 2 # gain 1.2
+
+d2 $ slow 4 $ n "f3*3 c3*4 bs3*4" # s "supersquare" # lfo 0 # resonance 0.3 # decay 2 # semitone 0.01
+
+d3 $ "super808 superhat <[superhat super808] bd> superhat [supersnare,super808] superhat"
+
+hush
+
+-- here comes noisey
+xfadeIn 1 8 $ n (segment (choose [16,8]) $ irand 100) # s "super808" # room 0.5 # slide 2 # resonance 0.7 # voice 2 # orbit 1 
+
+p 2 $ stack [
+    n "0 0 0 [0 6]" # s "super808" # room 0.5 # slide 2 # resonance 0.7 # voice 0.5 # sustain 1.2 # orbit 2,
+    s "superhat*16" # sustain (segment 16 $ (sine * 0.2) + 0.8)
+]
+
+p 2 $ silence
+
+setcps(132/60/4)
+
+xfadeIn 3 1 $ slow 4 $ up "d2 f2 b2 cs2" # s "superzow" # detune 1.01
+
+
+hush
+
+-- Un tema
+d1 $ sometimes rev $ arp "<up down pinky converge>" $ n "f4'maj7 c4'maj7 bs4'min7" # s "super808" # room 0.5 # sustain 0.7 # voice (segment 4 $ irand 10) # orbit 1
+
+d2 $ n (scale "major" "0 1 2 3 4 5 6 7") # s "superchip"
+
+d2 $ off 0.125 rev $ n "2 7 5 8" # s "supersquare"
+
+d2 $ silence

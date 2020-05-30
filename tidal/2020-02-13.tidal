@@ -1,0 +1,74 @@
+d1 $ off 0.5 (speed "0.25" n "4 6 3 7 8") $ stack [
+    s "[noise2(7,8)]" # speed "[[0.25,0.5][0.5,0.75]]/3"
+] # gain 1.2 # delay 0.4 # orbit 2
+
+d4 $ randslice 2 $ "fm" # legato 1
+
+d3 $ s "juno:10,juno:11" # speed "0.5" # legato 2 # gain 0.8
+
+p 2 $ s "[<reverbkick <reverbkick [reverbkick,cp]>> <[808:1, ~ 808:1] 808:1*2>]*4" # room 0.1 # orbit 1 # gain 1.1 # delay 0.4
+
+d4 $ slow 2 $ n "0 0 0 0 12 0 13 0 0 0 0 24 0 28 0 12" # s "midi"
+
+hush
+
+d1 $ sound "jvbass(3,8)"
+
+anticipateIn 4 1 $ sound "jvbass(5,8)"
+
+
+anticipate 1 $ "reverbkick*4" # hpf 2000
+
+p 1 $ --slow 2 $ 
+  up (off 0.25 (+12) $ off 0.125 (+7) $ "d(3,8)/2 b(3,8)*3 f(3,8,2) g(3,8)") 
+  # sound "pluck:7" # room 0.4 # sz 0.9 # delay 0.0725 # orbit 1
+
+
+d3 $ off 0.5 (# n "7") $ s "[808(3,8) 808(6,12)]" # speed "[[0.25,0.5][0.5,0.75]]/2" # gain 1.2
+
+d2 $ stack [
+    s "reverbkick*4",
+    s "hh*16" # gain (fast 4 $ range 0.7 1.2 $ tri)
+]
+
+d3 $ "b"
+
+
+
+
+
+
+
+
+
+
+d1 $ slow 2 $ stack [up (off 0.25 (+12) $ off 0.125 (+7) $ "0(3,8) 9(3,8) 4(3,8) 7(3,8)"), -up (12 - "0(3,8) 9(3,8) 4(3,8) 7(3,8)") # sus 8] # s "pluck:7" # room 0.3 # sz 0.9 # orbit 1 # gain 0.9
+
+d2 $ "[reverbkick [<superhat superhat*2>]]*4"
+
+d3 $ n (run 16) # s "noise2" # gain (slow 2 $ range 0.8 1.1 $ tri)
+
+d4 $ s "[808(3,8)]*2" # speed "[[0.25,0.5][0.50.75]]/2" # gain 1.1
+
+hush
+
+
+setcps(138/60/4)
+
+d1 $ slow 2 $ stack [up (off 0.25 (+12) $ off 0.125 (+7) $ "0(3,8) 9(3,8) 4(3,8) 5(3,8)"), -up (stack[12,0] - "0(3,8) 9(3,8) 4(3,8) 5(3,8)") # speed "0.5"] # s "pluck:7" # room 0.4 # sz 0.9 # orbit 1
+
+d2 $ "[reverbkick 808:1]*4" # delay 0.25 # orbit 3
+
+d3 $ n (run 16) # s "noise2" # crush (range 2 5 $ tri) # delay 0.25 # orbit 2
+
+d4 $ "fm" # legato 1
+
+d5 $ "mp3*2" # speed 0.25 # gain (slow 2 $ range 0.5 0.8 $ saw) # room 0.5 # sz 1 # orbit 4 # legato 1
+
+d1 $ 
+
+d2 $ "clubkick*4"
+
+hush
+
+d1 $ "808:1*16" # gain (fast 4 $ range 0.7 1.1 $ tri)

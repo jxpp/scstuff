@@ -1,0 +1,12 @@
+setcps(138/60/4)
+
+d1 $ rev $ loopAt 8 $ chop 128 $ sound "bev"
+
+d2 $ "[reverbkick [superhat, bass]]*4" # room 0.1
+
+d3 $ jux r(ev) $ loopAt 4 $ chop 8 $ s "juno:11*4" 
+
+
+d3 $ "noise2*4" |+| "noise2*7"
+
+hush

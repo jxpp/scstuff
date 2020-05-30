@@ -1,0 +1,10 @@
+setcps(138/60/4)
+
+d1 $ n "<0 0 0 0,0 12? 0(2,1) 13,0 7? 8 0,0 12 13 0>*8" # s "midi" # stack [midichan 1]
+
+d2 $ stack [
+    s "[<reverbkick [reverbkick,cp]> hh:7]*4",
+    n (run 16) # s "noise2" # gain 0.85
+]
+
+hush

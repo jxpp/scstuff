@@ -1,0 +1,26 @@
+-- HOLA A TODXS
+-- Y BIENVENIDXS
+-- A LA HORA DEL LIVECODER
+-- DE TOPLAP BARCELONA!!!
+
+d1 $ "super808"
+
+-- empezamos a las 8:08! ... o sea... AHORA MISMO!!!!!!!
+
+hush
+
+d1 $ arp "<up down pinky pinky>" $ n "f4'min7 c4'min7 bs4'min7 c4'7sus4" # s "supercomparator" # room 0.1 # orbit 1 # voice 2 # sustain 0.5 # velocity 0.5
+
+xfadeIn 2 16 $ silence-- slow 4 $ n "f3 c3 bs3" # s (stack ["supersquare", "superzow"]) # lfo 0.1 # sustain 3 # gain 0.9
+
+d3 $ silence-- slow 8 $ n "f4'min7 c4'min7 bs4'min7 c4'7sus4" # s "supercomparator" # room 0.1 # orbit 2 # voice 4 # sustain 0.5 # gain 0.95
+
+xfadeIn 1 8 $ n "0 0 0 [0 6]" # s "super808"
+
+
+
+do
+    p 1 $ n "[0(3,8)]*3" # s "super808" # voice 1 # gain 1.1 # sustain 1
+    p 4 $ silence--n (segment (choose [32, 16]) $ irand 100) # s "super808" # gain 0.9
+    xfadeIn 5 8 $ silence--"superhat*16" # sustain (segment 16 $ (sine*0.1) + 0.7) # gain 0.9
+    xfade 3 $ sometimes rev $ jux rev $ arp "<up down pinky>" $ n "n7 c5'min7 bs5'min7 c5'7sus4" # s "super808" # room 0.2 # orbit 1 # voice 0.5 # sustain 0.8

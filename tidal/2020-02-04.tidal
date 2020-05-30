@@ -1,0 +1,9 @@
+d1 $ s "[reverbkick [superhat, bass]]*4" # room 0.2 # gain 1.1
+
+d2 $ silence
+
+d3 $ jux (rev) $ n (run 16) # "noise2"
+
+d4 $ randslice 4 $ "juno:10*4" # lpf "1000 800 700 800" # lpq "<0.2 0.1 0.05>"
+
+d5 $ up ( run 16) # s "glitch" # gain 1.2

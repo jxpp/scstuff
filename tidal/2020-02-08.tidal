@@ -1,0 +1,27 @@
+d1 $ silence
+
+d2 $ s "[bass0 [superhat, bass]]*4"
+
+d3 $ up "[c,e,g,b]*4" # s "[stab:0]" # gain 0.7 # legato 1 # room 0.2
+
+d4 $ every 2 (room 0.3) $ jux (rev) $ n (run 16) # s "casio"
+
+d5 $ n (run 8) # "kurt"
+
+xfade "amb" $ "mp3*4" # legato 1 # gain 0.5
+
+d1 $ "[bass0 [hh:7,bass]]*4"
+
+d2 $ silence
+
+d3 $ jux (rev) $ n (run 16) # s "noise2"
+
+d4 $ "juno*8" # up (irand 25) # distort 0.3 # gain 1.1 # lpf "700" # lpq 0.2
+
+d5 $ silence
+
+d3 $ silence
+
+p "amb" $ silence
+
+hush

@@ -1,0 +1,15 @@
+d1 $ fast 2 $ n (arp "<converge diverge diverge disconverge up>" "<c'm6 <d'min7 d'7sus4> g'7sus4 d'sus4>") # s "supercomparator" # room 0.5 # orbit 1 # gain 0.7 # voice 4
+
+d3 $ sometimes (rev) $ stack [
+    s "super808*6" # n 0 # voice 0.5 # sustain 1,
+    s "[superhat]*12" # n (fast 2 $ sine * 10),
+    s "[~ supersnare]*2" # decay "[10]*2"
+] # room 0.2 # orbit 2
+
+hush
+
+d3 $ silence--"bd(7,8)"
+
+d2 $ silence--"<bd bd(3,8)> hh [sd,bd] hh bd bd hh sd sd"
+
+d1 $ n (arp "<up down diverge>" "<a'm9'8 e'7sus4'8>") # sound "supercomparator"

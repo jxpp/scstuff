@@ -1,0 +1,47 @@
+setcps(142/60/4)
+
+d1 $ "[bd [hh hh] bd hh bd hh bd hh, sd [] sd []]"
+
+d2 $ "sd"
+
+d1 $ sound "[bd bd bd, [sd sd] cp, arpy [arpy [arpy arpy] arpy arpy], odx]"
+
+d3 $ sound "<arpy:1 arpy:2 arpy:3>"
+
+d4 $ sound "arpy" # speed "[1, 1.5]"
+
+d1 $ sound "bd(7,16)"
+
+d7 $ sound "hh [hh ~ hh] hh [hh hh]"
+
+d1 $ every 2 (rev) (sound "[bd:1(5,8,4),hh(7,16,3)]")
+
+d1 $ silence
+
+d3 $ s "[arpy:0*4,arpy:0*3]" # up (rand)
+
+d2 $ sound "~ ~ sd ~ ~ ~ sd ~"
+
+d3 $ every 2 (rev) (sound "hh hh hh hh hh hh hh hh ")
+
+d1 $ every 2 (rev) (s "[hh:0*3, bd:0*2, sd*2]*6")
+
+d1 $ sound "bd(6,8)"
+
+d2 $ sound "~ sd ~ sd"
+
+d5 $ sound "hh [hh hh] hh hh hh [hh hh] hh hh" # reverb "0.5 0.5 0.5"
+
+d3 $ sound "casio:3*8" # octer "0 0.5 1" # n (irand 12) # speed 0.2
+
+d4 $ sound "casio:5*4" # n (irand 12) # speed 0.4
+
+d4 $ every 2 (rev) (s "arpy:5*4" # n (irand 12) # speed 0.4)
+
+d1 $ s "supersaw" # n (irand 5)
+
+d1 $ s "super808*4" # voice 0.5 # speed 0.01 # gain 1.5
+
+d2 $ s "[~ superhat]*4"
+
+d4 $ silence

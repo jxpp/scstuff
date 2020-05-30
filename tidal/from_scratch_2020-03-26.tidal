@@ -1,0 +1,15 @@
+
+-- HOLA TOPLAP!
+
+d1 $ slow 2 $ n (run 16) # s "noise2"
+
+d2 $ "[bd <noise2 ~>](3,8,1)"
+
+d3 $ n (run 8) # s "casio" # gain 0.8
+
+d4 $ slow 2 $ n (scale "phrygian" "0 <3 0>? <2 24> <4 35> 0 <3 12> 0 4 <0 15> 4 <7 14> 0 <4 24> <7>") # s "midi" # midichan 0 # legato 0.1
+
+d5 $ "bass*4" # speed (stack [0.75, 1.5])
+
+d9 $ "hh*8"
+

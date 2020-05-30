@@ -1,0 +1,19 @@
+setcps(138/60/4)
+
+p "a" $ "[reverbkick [hh hh]]*4"
+
+p "b" $ "kurt:0*8" # n (run 32)
+
+p "c" $ silence
+
+p "c" $ s "casio*16"
+      # n (run 16)
+
+p "d" $ chunk 3 (rev)
+      $ jux (rev)
+      $ n (run 16)
+      # s "noise2"
+
+p "e" $ s "sine*8" # speed 0.25 # n (irand 10)
+
+p "c" $ silence

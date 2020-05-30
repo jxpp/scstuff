@@ -1,0 +1,7 @@
+setcps(138/60/4)
+
+d1 $ note (scale "spanish" "0 0 0 0 3 0 7 0 12 0 <14 24 13 17>" ) # s "midi"
+
+d2 $ "[<reverbkick [reverbkick,sd]> superhat]*4"
+
+d3 $ n (run 16) # s "noise2"

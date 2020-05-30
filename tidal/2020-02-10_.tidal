@@ -1,0 +1,13 @@
+d1 $ silence-- n "0 0 0 0 0 12 0 13" # s "midi"
+
+
+d2 $ stack [
+    s "[<reverbkick [reverbkick,sd]>superhat]*4",
+    n (run 16) # "noise2"
+] # hpf 1400
+
+d3 $ silence--n (run 16) # "speakspell" # gain 0.7
+
+d4 $ ""
+
+hush

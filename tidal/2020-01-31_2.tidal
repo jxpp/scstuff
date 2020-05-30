@@ -1,0 +1,10 @@
+setcps(138/60/4)
+
+d1 $ chunk 4 (|- note 5) $ jux rev $ 
+  arp "<pinkyup down thumbup up>" $ n "<c'maj'4 e4'min'8 f4'maj'4>"
+  # sound "casio"
+  # sustain 2 # room 0.3 # sz 0.9
+
+d2 $ s "reverbkick*4"
+
+d3 $ "[~ hh]*4"

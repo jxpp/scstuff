@@ -1,0 +1,32 @@
+setcps(150/60/4)
+
+xfade "r" $ s "[gabba [superhat, jvbass] [gabba , sd] [superhat, jvbass]]*2"
+
+d1 $ silence
+
+d2 $ jux (rev) $ n (run 16) # s "noise2" # room 0.4 # gain 0.9
+
+d3 $ "juno*16" # n (irand 12) # lpf "600 800 1000 800" # lpq 0.4 # legato 1 # gain 0.8
+
+d4 $ n (run 8) # s "casio" # room 0.3 # gain 0.8
+
+d5 $ randslice 32 $ s "bev*8" # legato 1 # gain 1.2
+
+d6 $ s "jazz*4" # n "11 12 15 18"
+
+d1 $ n (run 4) # "casio"
+
+d2 $ silence
+
+p "r" $ "[reverbkick [bass, superhat] [reverbkick, sd] [bass, superhat]]*2"
+
+xfade "b" $ randslice 45 $ s "bev*16" # legato 1 # gain 1.2
+
+d4 $ "juno*8" # n (irand 12) # lpf "600 800 1000 800" # lpq 0.4 # legato 1 # gain 0.8
+
+d5 $ up "<[c e d g]*2 [c a f e]*2>" # s "pluck:7"
+
+d6 $ "bd(3,4) [hh hh, ~*3 bd] [bd, sd hh] hh"
+
+
+hush

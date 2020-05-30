@@ -1,0 +1,4 @@
+d1 $ stack [
+    n (scale "dorian" $ round <$> (segment 6 $ sine*12 * rand*4)) # s "arpy" # midichan 5,
+    s "bd(6,8)"
+]

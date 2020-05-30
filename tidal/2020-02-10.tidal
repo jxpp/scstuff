@@ -1,0 +1,15 @@
+d1 $ "[bass0 [jungle:3, bass]]*4"
+
+d2 $ "[~ sd]*2"
+
+d3 $ jux (rev) $ n (run 16) # s "noise2"
+
+xfade "v" $ randslice 8 $ s "fm"
+
+xfade "m" $ silence
+
+d4 $ "[juno:11, juno:10]" # legato 1 # speed 0.5
+
+xfade "v" $ randslice 16 $ "bev*4"
+
+hush

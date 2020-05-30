@@ -1,0 +1,30 @@
+setcps(142/60/4)
+
+d1 $ n (arp (choose ["pinky", "updown"]) (scale "spanish" "[0,3,5,7]*2" + "<0 4 3 5>")) # s "midi"
+
+d2 $ silence--up (slow 4 $ "0*4 5*4 9*4 3*4") # s "bass"
+
+d3 $ "[<reverbkick [reverbkick,808sd]> <808:7 808:7 808:7 808:7*2>]*4" # room 0.4 # orbit 1
+
+d4 $ n (run 16) # "noise2" # crush (range 2 3 $ saw)
+
+d5 $ n (segment 16 $ irand 24) # stack [s "speakspell" # gain 0.8, s "kurt"]
+
+d5 $ "juno:11,juno:10" # speed 0.25 # legato 2
+
+d6 $ n (segment 4 $ choose [0, 4, 6]) # s "mp3:4*4" # gain 0.7 # crush 2
+
+d1 $ slow 2 $ 
+  n (off 0.5 (+12) $ off 0.125 (+7) $ slow 2 "c(3,8) a(3,8,2) f(3,8) e(3,8,4)") 
+  # sound "midi"
+
+
+p 1 $ off 0.5 (# n "[7 9 2]*2") $ stack [
+    s "noise2(7,12)" # gain "1.2 1.3" # speed "[[0.25,0.5][0.5,0.75][0.125,0.75]*2]/4" # legato 1
+]
+
+p 2 $ "[<reverbkick> <superhat superhat*2>]*4" # gain 1.1 # room 0.2 # delay 0.2 # delaytime 0.3 # orbit 1
+
+hush
+
+d3 $ off 0.5 (# n (arp "<updown down pinky>" "c'maj7*2")) $ n (arp "<up pinky diverge>" "c'maj7 g'maj7") # s "midi"

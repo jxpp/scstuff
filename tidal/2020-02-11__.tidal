@@ -1,0 +1,7 @@
+setcps(138/60/4)
+
+p "a" $ s "[<reverbkick [reverbkick,sd]> <superhat [superhat*2]>]*4" # room 0.2 # orbit 1
+
+d2 $ -n "0 0 <0 [7 8]> 0 12 0 13 0" # sound "midi"
+
+hush

@@ -1,0 +1,19 @@
+d1 $ "super808(4,4)" # gain 1.25 # voice 0.5
+
+d5 $ s "clubkick*4" # n 0
+
+d2 $ s "[~ hh:]*4"
+
+d2 $ s "[~ arpy]*4" # speed 0.25 # lpf 
+
+d3 $ s "[~ arpy]*8" # n (irand 10) # speed 0.5 # (lpf 800) # legato 4
+
+d4 $ "casio*8" # n (irand 20)
+
+d5 $ silence
+
+n (off 0.125 (|- 24)  "<c*2 a(3,8) f(3,8,2) e*2>")
+  # legato 2
+  # sound "arpy"
+  # gain 1.2
+
